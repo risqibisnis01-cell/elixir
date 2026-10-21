@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Belgan Aesthetic';
+  src: url('https://s3.envelope.id/wp/uploads/2026/02/Belgant-Aesthetic-1.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-weight: 300 800;
+  src: url('https://s3.envelope.id/wp/uploads/2026/02/metropolis-latin-400-normal-2.woff') format('woff');
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Belgan Aesthetic', serif;
+  }
+  .font-body {
+    font-family: 'Metropolis', sans-serif;
+  }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .glass-button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Bi-directional Reanimate Transitions */
+.reanimate {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reanimate.up { transform: translateY(40px); }
+.reanimate.left { transform: translateX(-60px); }
+.reanimate.right { transform: translateX(60px); }
+.reanimate.fade { transform: none; }
+
+.reanimate.in-view {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.delay-100 { transition-delay: 0.1s !important; }
+.delay-200 { transition-delay: 0.2s !important; }
+.delay-300 { transition-delay: 0.3s !important; }
+.delay-400 { transition-delay: 0.4s !important; }
+.delay-500 { transition-delay: 0.5s !important; }
